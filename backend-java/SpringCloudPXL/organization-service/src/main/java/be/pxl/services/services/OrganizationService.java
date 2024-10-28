@@ -14,25 +14,25 @@ public class OrganizationService implements IOrganizationService{
     private final OrganizationRepository organizationRepository;
     @Override
     public OrganizationResponse getOrganizationById(Long id) {
-        Organization organization = organizationRepository.getById(id);
+        Organization organization = null; //organizationRepository.getById(id);
         return mapToOrganizationResponse(organization);
     }
 
     @Override
     public OrganizationResponse getOrganizationByIdWithDepartments(Long id) {
-        Organization organization = organizationRepository.findByIdWithDepartments(id);
+        Organization organization = null; //organizationRepository.findByIdWithDepartments(id);
         return mapToOrganizationResponse(organization);
     }
 
     @Override
     public OrganizationResponse getOrganizationByIdWithDepartmentsAndEmployees(Long id) {
-        Organization organization = organizationRepository.findByIdWithDepartmentsAndEmployees(id);
+        Organization organization = null; //organizationRepository.findByIdWithDepartmentsAndEmployees(id);
         return mapToOrganizationResponse(organization);
     }
 
     @Override
     public OrganizationResponse getOrganizationByIdWithEmployees(Long id) {
-        Organization organization = organizationRepository.findByIdWithEmployees(id);
+        Organization organization = null; //organizationRepository.findByIdWithEmployees(id);
         return mapToOrganizationResponse(organization);
     }
 

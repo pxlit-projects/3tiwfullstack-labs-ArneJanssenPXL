@@ -19,8 +19,9 @@ public class DepartmentController {
     }
 
     @PostMapping
-    public void add(@RequestBody DepartmentRequest departmentRequest){
+    public ResponseEntity add(@RequestBody DepartmentRequest departmentRequest){
         departmentService.addDepartment(departmentRequest);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")

@@ -20,8 +20,10 @@ public class Organization {
     private Long id;
     private String name;
     private String address;
-    @OneToMany
+    //@OneToMany
+    @Transient
     private List<Employee> employees;
-    @OneToMany
+    //@OneToMany
+    @Transient
     private List<Department> departments;
 }

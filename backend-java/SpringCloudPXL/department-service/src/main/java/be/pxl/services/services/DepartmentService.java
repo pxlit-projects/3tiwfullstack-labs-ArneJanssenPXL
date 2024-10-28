@@ -7,6 +7,7 @@ import be.pxl.services.repository.DepartmentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -45,7 +46,7 @@ public class DepartmentService implements IDepartmentService{
 
     @Override
     public List<DepartmentResponse> getDepartmentByOrganizationWithEmployees(Long organizationId) {
-        List<Department> departments = departmentRepository.findByOrganizationIdWithEmployees(organizationId);
+        List<Department> departments = Collections.emptyList(); //departmentRepository.findByOrganizationIdWithEmployees(organizationId);
         return departments.stream().map(department -> mapToDepartmentResponse(department)).toList();
     }
 
