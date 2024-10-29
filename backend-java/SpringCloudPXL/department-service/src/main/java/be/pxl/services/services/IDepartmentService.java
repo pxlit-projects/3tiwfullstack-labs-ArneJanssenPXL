@@ -2,7 +2,6 @@ package be.pxl.services.services;
 
 import be.pxl.services.domain.dto.DepartmentRequest;
 import be.pxl.services.domain.dto.DepartmentResponse;
-import org.springframework.http.HttpStatusCode;
 
 import java.util.List;
 
