@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-//@Slf4j
+@Slf4j
 @RequestMapping("/notification/")
 public class NotificationController {
     private final NotificationService notificationService;
 
-    /*@PostMapping
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void sendMessage(@RequestBody Notification notification){
         notificationService.sendMessage(notification);
-    }*/
+    }
 }
