@@ -4,12 +4,15 @@ import be.pxl.services.domain.Organization;
 import be.pxl.services.domain.dto.OrganizationResponse;
 import be.pxl.services.repository.OrganizationRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class OrganizationService implements IOrganizationService{
     private final OrganizationRepository organizationRepository;
+    private static final Logger log = LoggerFactory.getLogger(OrganizationService.class);
     @Override
     public OrganizationResponse getOrganizationById(Long id) {
         Organization organization = null; //organizationRepository.getById(id);
@@ -35,6 +38,7 @@ public class OrganizationService implements IOrganizationService{
     }
 
     private OrganizationResponse mapToOrganizationResponse(Organization organization){
+        log.info("Map {} To OrganizationResponse", organization);
         return OrganizationResponse.builder()
                 .name(organization.getName())
                 .address(organization.getAddress())

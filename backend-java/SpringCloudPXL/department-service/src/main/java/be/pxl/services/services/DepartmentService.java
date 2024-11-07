@@ -5,6 +5,8 @@ import be.pxl.services.domain.dto.DepartmentRequest;
 import be.pxl.services.domain.dto.DepartmentResponse;
 import be.pxl.services.repository.DepartmentRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -14,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DepartmentService implements IDepartmentService{
     private final DepartmentRepository departmentRepository;
+    private static final Logger log = LoggerFactory.getLogger(DepartmentService.class);
     @Override
     public List<DepartmentResponse> getAllDepartments() {
         List<Department> departments = departmentRepository.findAll();
@@ -51,6 +54,7 @@ public class DepartmentService implements IDepartmentService{
     }
 
     private DepartmentResponse mapToDepartmentResponse(Department department){
+        log.info("Map {} to DepartmentResponse", department.getName());
         return DepartmentResponse.builder()
                 .organizationId(department.getOrganizationId())
                 .name(department.getName())

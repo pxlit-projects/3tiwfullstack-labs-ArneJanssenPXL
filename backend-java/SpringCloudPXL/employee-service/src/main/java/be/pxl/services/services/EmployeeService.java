@@ -7,6 +7,8 @@ import be.pxl.services.domain.dto.EmployeeRequest;
 import be.pxl.services.domain.dto.EmployeeResponse;
 import be.pxl.services.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +18,7 @@ import java.util.List;
 public class EmployeeService implements IEmployeeService{
     private final EmployeeRepository employeeRepository;
     private final NotificationClient notificationClient;
+    private static final Logger log = LoggerFactory.getLogger(EmployeeService.class);
     @Override
     public List<EmployeeResponse> getAllEmployees() {
         List<Employee> employees = employeeRepository.findAll();
@@ -23,6 +26,7 @@ public class EmployeeService implements IEmployeeService{
     }
 
     private EmployeeResponse mapToEmployeeResponse(Employee employee) {
+        log.info("Map {} to EmployeeRespone", employee.getName());
         return EmployeeResponse.builder()
                 .age(employee.getAge())
                 .name(employee.getName())
