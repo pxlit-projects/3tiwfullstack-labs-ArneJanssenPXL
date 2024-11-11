@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface IEmployeeService {
     List<EmployeeResponse> getAllEmployees();
-    void addEmployee(EmployeeRequest employeeRequest);
+    EmployeeResponse addEmployee(EmployeeRequest employeeRequest);
 
     EmployeeResponse getEmployeeById(Long id);
 

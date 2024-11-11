@@ -38,12 +38,12 @@ public class DepartmentController {
     @GetMapping("/organization/{organizationId}")
     public ResponseEntity findByOrganization(@PathVariable Long organizationId){
         log.info("Finding Departments By Organization Id: {}", organizationId);
-        return new ResponseEntity(departmentService.getDepartmentByOrganization(organizationId), HttpStatus.OK);
+        return new ResponseEntity(departmentService.getDepartmentsByOrganizationId(organizationId), HttpStatus.OK);
     }
 
     @GetMapping("/organization/{organizationId}/with-employees")
     public ResponseEntity findByOrganizationWithEmployees(@PathVariable Long organizationId){
         log.info("Finding Department By Organization Id: {} With Employees", organizationId);
-        return new ResponseEntity(departmentService.getDepartmentByOrganizationWithEmployees(organizationId), HttpStatus.OK);
+        return new ResponseEntity(departmentService.getDepartmentsByOrganizationIdWithEmployees(organizationId), HttpStatus.OK);
     }
 }

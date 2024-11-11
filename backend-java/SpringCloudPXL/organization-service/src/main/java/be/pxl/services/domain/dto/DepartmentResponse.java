@@ -16,6 +16,6 @@ public class DepartmentResponse {
     private Long id;
     private Long organizationId;
     private String name;
-    private List<Employee> employees;
+    //private List<Employee> employees;
     private String position;
 }

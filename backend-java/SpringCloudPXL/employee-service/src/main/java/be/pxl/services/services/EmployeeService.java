@@ -5,6 +5,7 @@ import be.pxl.services.domain.Employee;
 import be.pxl.services.domain.NotificationRequest;
 import be.pxl.services.domain.dto.EmployeeRequest;
 import be.pxl.services.domain.dto.EmployeeResponse;
+import be.pxl.services.exception.EmployeeNotFoundException;
 import be.pxl.services.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -22,12 +23,13 @@ public class EmployeeService implements IEmployeeService{
     @Override
     public List<EmployeeResponse> getAllEmployees() {
         List<Employee> employees = employeeRepository.findAll();
-        return employees.stream().map(employee -> mapToEmployeeResponse(employee)).toList();
+        return employees.stream().map(this::mapToEmployeeResponse).toList();
     }
 
     private EmployeeResponse mapToEmployeeResponse(Employee employee) {
         log.info("Map {} to EmployeeRespone", employee.getName());
         return EmployeeResponse.builder()
+                .id(employee.getId())
                 .age(employee.getAge())
                 .name(employee.getName())
                 .position(employee.getPosition())
@@ -37,7 +39,7 @@ public class EmployeeService implements IEmployeeService{
     }
 
     @Override
-    public void addEmployee(EmployeeRequest employeeRequest) {
+    public EmployeeResponse addEmployee(EmployeeRequest employeeRequest) {
         Employee employee = Employee.builder()
                 .age(employeeRequest.getAge())
                 .name(employeeRequest.getName())
@@ -46,7 +48,9 @@ public class EmployeeService implements IEmployeeService{
                 .organizationId(employeeRequest.getOrganizationId())
                 .build();
 
-        employeeRepository.save(employee);
+        employee = employeeRepository.save(employee);
+
+        log.info("Employee with id {} created", employee.getId());
 
         NotificationRequest notificationRequest =
                 NotificationRequest.builder()
@@ -55,23 +59,26 @@ public class EmployeeService implements IEmployeeService{
                         .build();
 
         notificationClient.sendNotification(notificationRequest);
+
+        return mapToEmployeeResponse(employee);
     }
 
     @Override
     public EmployeeResponse getEmployeeById(Long id) {
-        Employee employee = employeeRepository.getById(id);
-        return mapToEmployeeResponse(employee);
+        /*Employee employee = employeeRepository.getById(id);
+        return mapToEmployeeResponse(employee);*/
+        return employeeRepository.findById(id).map(this::mapToEmployeeResponse).orElseThrow(() -> new EmployeeNotFoundException("Employee with " + id + " not found"));
     }
 
     @Override
     public List<EmployeeResponse> getEmployeeByDepartment(Long departmentId) {
         List<Employee> employees = employeeRepository.findByDepartmentId(departmentId);
-        return employees.stream().map(employee -> mapToEmployeeResponse(employee)).toList();
+        return employees.stream().map(this::mapToEmployeeResponse).toList();
     }
 
     @Override
     public List<EmployeeResponse> getEmployeeByOrganization(Long organizationId) {
         List<Employee> employees = employeeRepository.findByOrganizationId(organizationId);
-        return employees.stream().map(employee -> mapToEmployeeResponse(employee)).toList();
+        return employees.stream().map(this::mapToEmployeeResponse).toList();
     }
 }
