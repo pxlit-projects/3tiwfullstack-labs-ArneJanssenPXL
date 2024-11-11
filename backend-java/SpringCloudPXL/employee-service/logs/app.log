@@ -1,0 +1,14 @@
+2024-11-11T15:35:23.815+0100 INFO               [main]                         be.pxl.services.EmployeeTests - Starting EmployeeTests using Java 22.0.2 with PID 14132 (started by Arne in C:\Users\Arne\Documents\PXL_VIERDE_JAAR\1_FullstackJava\Backend\Lab\3tiwfullstack-labs-ArneJanssenPXL\backend-java\SpringCloudPXL\employee-service)
+2024-11-11T15:35:23.817+0100 DEBUG              [main]                         be.pxl.services.EmployeeTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-11-11T15:35:23.818+0100 INFO               [main]                         be.pxl.services.EmployeeTests - No active profile set, falling back to 1 default profile: "default"
+2024-11-11T15:35:33.200+0100 INFO               [main]                         be.pxl.services.EmployeeTests - Started EmployeeTests in 11.736 seconds (process running for 41.172)
+2024-11-11T15:35:34.166+0100 INFO               [main]                         be.pxl.services.controller.EmployeeController - Finding Employee By Department Id: 1
+2024-11-11T15:35:34.211+0100 INFO               [main]                         be.pxl.services.services.EmployeeService - Map Jan to EmployeeRespone
+2024-11-11T15:35:34.212+0100 INFO               [main]                         be.pxl.services.services.EmployeeService - Map Roos to EmployeeRespone
+2024-11-11T15:35:34.374+0100 INFO               [main]                         be.pxl.services.controller.EmployeeController - Finding employee 3
+2024-11-11T15:35:34.404+0100 INFO               [main]                         be.pxl.services.services.EmployeeService - Map Jan to EmployeeRespone
+2024-11-11T15:35:34.447+0100 INFO               [main]                         be.pxl.services.controller.EmployeeController - Adding Jan
+2024-11-11T15:35:34.464+0100 INFO               [main]                         be.pxl.services.services.EmployeeService - Employee with id 4 created
+2024-11-11T15:35:34.731+0100 INFO               [main]                         be.pxl.services.controller.EmployeeController - Finding Employees By Organization id: 1
+2024-11-11T15:35:34.739+0100 INFO               [main]                         be.pxl.services.services.EmployeeService - Map Jan to EmployeeRespone
+2024-11-11T15:35:34.739+0100 INFO               [main]                         be.pxl.services.services.EmployeeService - Map Roos to EmployeeRespone

@@ -1,0 +1,16 @@
+2024-11-11T15:41:00.340+0100 INFO               [main]                         be.pxl.services.DepartmentTests - Starting DepartmentTests using Java 22.0.2 with PID 28332 (started by Arne in C:\Users\Arne\Documents\PXL_VIERDE_JAAR\1_FullstackJava\Backend\Lab\3tiwfullstack-labs-ArneJanssenPXL\backend-java\SpringCloudPXL\department-service)
+2024-11-11T15:41:00.341+0100 DEBUG              [main]                         be.pxl.services.DepartmentTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-11-11T15:41:00.342+0100 INFO               [main]                         be.pxl.services.DepartmentTests - No active profile set, falling back to 1 default profile: "default"
+2024-11-11T15:41:09.110+0100 INFO               [main]                         be.pxl.services.DepartmentTests - Started DepartmentTests in 11.046 seconds (process running for 33.344)
+2024-11-11T15:41:09.961+0100 INFO               [main]                         be.pxl.services.controller.DepartmentController - Adding Department ICT
+2024-11-11T15:41:10.038+0100 INFO               [main]                         be.pxl.services.services.DepartmentService - Department id 1 created
+2024-11-11T15:41:10.039+0100 INFO               [main]                         be.pxl.services.services.DepartmentService - Map ICT to DepartmentResponse
+2024-11-11T15:41:10.154+0100 INFO               [main]                         be.pxl.services.controller.DepartmentController - Finding all Departments
+2024-11-11T15:41:10.169+0100 INFO               [main]                         be.pxl.services.services.DepartmentService - Map ICT to DepartmentResponse
+2024-11-11T15:41:10.169+0100 INFO               [main]                         be.pxl.services.services.DepartmentService - Map Healthcare to DepartmentResponse
+2024-11-11T15:41:10.292+0100 INFO               [main]                         be.pxl.services.controller.DepartmentController - Finding Department id: 4
+2024-11-11T15:41:10.317+0100 INFO               [main]                         be.pxl.services.services.DepartmentService - Map ICT to DepartmentResponse
+2024-11-11T15:41:10.383+0100 INFO               [main]                         be.pxl.services.controller.DepartmentController - Finding Department By Organization Id: 1 With Employees
+2024-11-11T15:41:10.675+0100 INFO               [main]                         be.pxl.services.controller.DepartmentController - Finding Departments By Organization Id: 1
+2024-11-11T15:41:10.683+0100 INFO               [main]                         be.pxl.services.services.DepartmentService - Map ICT to DepartmentResponse
+2024-11-11T15:41:10.683+0100 INFO               [main]                         be.pxl.services.services.DepartmentService - Map Media to DepartmentResponse

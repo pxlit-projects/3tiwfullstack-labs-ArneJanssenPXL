@@ -1,0 +1,8 @@
+2024-11-11T15:49:56.601+0100 INFO               [main]                         be.pxl.services.OrganizationTests - Starting OrganizationTests using Java 22.0.2 with PID 15820 (started by Arne in C:\Users\Arne\Documents\PXL_VIERDE_JAAR\1_FullstackJava\Backend\Lab\3tiwfullstack-labs-ArneJanssenPXL\backend-java\SpringCloudPXL\organization-service)
+2024-11-11T15:49:56.602+0100 DEBUG              [main]                         be.pxl.services.OrganizationTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-11-11T15:49:56.604+0100 INFO               [main]                         be.pxl.services.OrganizationTests - No active profile set, falling back to 1 default profile: "default"
+2024-11-11T15:50:05.223+0100 INFO               [main]                         be.pxl.services.OrganizationTests - Started OrganizationTests in 10.892 seconds (process running for 33.068)
+2024-11-11T15:50:06.131+0100 INFO               [main]                         be.pxl.services.controller.OrganizationController - Finding Organization 1 with Departments
+2024-11-11T15:50:06.460+0100 INFO               [main]                         be.pxl.services.controller.OrganizationController - Finding Organization 1
+2024-11-11T15:50:06.538+0100 INFO               [main]                         be.pxl.services.controller.OrganizationController - Finding Organization 1 With Departments and Employees
+2024-11-11T15:50:06.607+0100 INFO               [main]                         be.pxl.services.controller.OrganizationController - Finding Organization 1 with Employees
